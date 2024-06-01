@@ -64,7 +64,7 @@ docker rm <container name>
 ````
 > NOTE - Please make sure to add the container name. It doesn't work for image id or image name
 
-### docker rmi8) Removes an image from the host machine
+### 8) Removes an image from the host machine
 ````
 docker rmi <image name>
 ````
