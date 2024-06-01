@@ -41,14 +41,18 @@ Sets the base image for subsequent instructions.
     ```Dockerfile
     FROM node:14
     ```
+    >If you use base image as ubuntu, in this case, there won't be python data.
+    >So you have to install it. Otherwise you can select python base image
 
 2. Using an official Ubuntu image:
     ```Dockerfile
     FROM ubuntu:20.04
     ```
+    >If you use base image as ubuntu, in this case, there won't be python data.
+    >So you have to install it. Otherwise you can select python base image
 
 ### WORKDIR
-Sets the working directory inside the container. If the directory doesn’t exist, it will be created.
+Sets the working directory inside the container. If the directory doesn’t exist, it will be created. It's basically identification on where your source coded is going to save
 
 #### Examples:
 1. Setting the working directory to `/app`:
@@ -74,6 +78,12 @@ Copies files or directories from the host machine to the Docker image.
     ```Dockerfile
     COPY package.json /app/package.json
     ```
+>If there is any requirements.txt file, you should first copy that inside your WORKDIR
+
+ ```Dockerfile
+    COPY requirements.txt /app
+    COPY devops /app
+ ``` 
 
 ### ADD
 Similar to COPY but also supports extracting TAR files and fetching files from URLs.
@@ -130,6 +140,10 @@ Configures a container to run as an executable. Unlike CMD, it cannot be overrid
     ```Dockerfile
     ENTRYPOINT ["java", "-jar", "myapp.jar"]
     ```
+## What is the difference between ENTRYPOINT and CMD?
+```
+Basically both ENTRYPOINT and CMD  can be used to execute as your start command
+```
 
 ### ENV
 Sets environment variables.
