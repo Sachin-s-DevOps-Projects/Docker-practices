@@ -2,17 +2,28 @@
 
 Some of the most commonly used docker commands are 
 
-### docker images
+### 1) Lists docker images on the host machine
+```
+docker images
+```
 
-Lists docker images on the host machine.
+### 2) Builds image from Dockerfile
+````
+docker build
+````
 
-### docker build
-
-Builds image from Dockerfile.
-
-### docker run
-
-Runs a Docker container. 
+### 3) Runs a Docker container
+````
+docker run <_docker image>
+````
+The -it flags tell Docker to make the container interactive and to attach the current shell to the container’s terminal
+````
+docker run -it <_docker image>
+````
+You can give a name to your Docker container by using the --name option with the docker run command
+````
+docker run -it --name <container  name> <_docker image>
+````
 
 There are many arguments which you can pass to this command for example,
 
@@ -21,38 +32,65 @@ There are many arguments which you can pass to this command for example,
 
 use `docker run --help` to look into more arguments.
 
-### docker ps
+### 4)Lists running containers on the host machine
 
-Lists running containers on the host machine.
+````
+docker ps
+````
+to display container which has been stopped
+````
+docker ps -a
+````
 
-### docker stop
+### 5)Stops running container
 
-Stops running container.
+````
+docker stop
+````
 
-### docker start
 
-Starts a stopped container.
 
-### docker rm
+### 6) Starts a stopped container
 
-Removes a stopped container.
+````
+docker start
+````
 
-### docker rmi
 
-Removes an image from the host machine.
+### 7) Removes a stopped container
 
-### docker pull
+````
+docker rm <container name>
+````
+> NOTE - Please make sure to add the container name. It doesn't work for image id or image name
 
-Downloads an image from the configured registry.
+### docker rmi8) Removes an image from the host machine
+````
+docker rmi <image name>
+````
 
-### docker push
+### 9) Downloads an image from the configured registry
+````
+docker pull
+````
 
-Uploads an image to the configured registry.
+### 10)Uploads an image to the configured registry
 
-### docker exec
+````
+docker push
+````
 
-Run a command in a running container.
 
-### docker network
+### 11)Run a command in a running container
 
-Manage Docker networks such as creating and removing networks, and connecting containers to networks.
+````
+docker exec
+````
+
+### 12)Manage Docker networks such as creating and removing networks, and connecting containers to networks
+
+````
+docker network
+````
+
+
