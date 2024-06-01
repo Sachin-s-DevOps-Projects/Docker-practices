@@ -1,6 +1,5 @@
 # Repo to learn Docker with examples. Contributions are most welcome.
 
-## If you found this repo useful, give it a STAR 🌠
 
 You can watch the video version of this repo on my youtube playlist. -> https://www.youtube.com/watch?v=7JZP345yVjw&list=PLdpzxOOAlwvLjb0vTD9BXLOwwLD_GWCmC
 
@@ -279,7 +278,7 @@ This message shows that your installation appears to be working correctly.
 
 ```
 git clone https://github.com/iam-veeramalla/Docker-Zero-to-Hero
-cd  examples
+cd  Docker-practices/examples/first-docker-file/
 ```
 
 ### Login to Docker [Create an account with https://hub.docker.com/]
