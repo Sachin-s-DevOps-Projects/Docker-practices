@@ -142,7 +142,13 @@ Configures a container to run as an executable. Unlike CMD, it cannot be overrid
     ```
 ## What is the difference between ENTRYPOINT and CMD?
 ```
-Basically both ENTRYPOINT and CMD  can be used to execute as your start command
+Basically both ENTRYPOINT and CMD  can be used to execute as your start command. Whenever someone runs docker run both  ENTRYPOINT and CMD  can serve as your starting command. But
+But only difference is  ENTRYPOINT something that you can't change. Therfore ENTRYPOINT
+should have none overrideable values(We have to put main executables in the ENTRYPOINT ).
+Whereas CMD is configurable
+If we don't want to let users to change any of things, then we should put it in ENTRYPOINT,
+otherwise you can put it in the CMD. 
+ 
 ```
 
 ### ENV
