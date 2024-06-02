@@ -6,10 +6,15 @@ Some of the most commonly used docker commands are
 ```
 docker images
 ```
-
+To lists latest 5 images,
+```
+docker images | head -5
+```
 ### 2) Builds image from Dockerfile
 ````
-docker build
+docker build .
+     or
+docker buld -t <give_a_name_for_image> .
 ````
 
 ### 3) Runs a Docker container
@@ -69,19 +74,27 @@ docker rm <container name>
 docker rmi <image name>
 ````
 
-### 9) Downloads an image from the configured registry
+### 9) Login to Docker
+````
+docker login
+````
+
+### 10) Downloads an image from the configured registry
 ````
 docker pull
 ````
 
-### 10)Uploads an image to the configured registry
 
+
+
+### 11) Uploads an image to the configured registry  
+
+Before this you have to login to docker
 ````
 docker push
 ````
 
-
-### 11)Run a command in a running container
+### 12)Run a command in a running container
 
 ````
 docker exec
