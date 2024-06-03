@@ -128,13 +128,21 @@ docker volume rm <-volume_name->
 
 ### 17) Using a Volume with a Container (Mount a volume when creating the container )
 ```
-docker run -d --mount source=<-volume_name->, target=/app <-image_name->
+docker run -d --name my-nginx-app --mount source=<-volume_name->,target=/app <-image_name->
+             or
+docker run -d --name my-nginx-app -v  my-first-volume:/app <-image_name->
 ```
+
+>Make sure to not make any spaces between sorce and target
+
+>ex: docker run -d --mount source=my-first-volume,target=/app bf3dc08bfed0
 
 *if you haven't created a docker image it , then you can write a image name, then it will pull it from docker hub
 
 ```
-docker run -d --mount source=<-volume_name->, target=/app nginx:latest
+docker run -d --name my-nginx-app --mount source=<-volume_name->,target=/app nginx:latest
+                                    or
+docker run -d --name my-nginx-app -v  my-first-volume:/app nginx:latest
 ```
 
 *This mount will be in a specific directory in Host OS. We dont need it creat it.
@@ -152,8 +160,10 @@ docker inspect <-container_name->
 ```
 
 Destinations - This will depicts where the mount in container
+ex: "Source": "/var/lib/docker/volumes/my-first-volume/_data",
 
 Source       - This will depicts where the mount in host OS
+ex:  "Destination": "/app",
 
 
 ### 19)Stops a mount 
