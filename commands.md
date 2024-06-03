@@ -139,7 +139,7 @@ docker run -d --mount source=<-volume_name->, target=/app nginx:latest
 
 *This mount will be in a specific directory in Host OS. We dont need it creat it.
 Docker will create a logical volume (Tha's mean docker will create a directory) 
-by itself
+in the Host operating system(OS) by itself.
 
 *And the mount will be in /app directory in the container (Because  target=/app )
 
@@ -155,5 +155,13 @@ Destinations - This will depicts where the mount in container
 
 Source       - This will depicts where the mount in host OS
 
+
+### 19)Stops a mount 
+
+>Before stopping a mount, first you must stop the container which has been mounted
+>after then container must be removed. Then you'll be able to stop the mount 
+````
+docker volume <-volume_name->
+````
 
 
