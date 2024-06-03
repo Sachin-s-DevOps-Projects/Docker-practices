@@ -106,4 +106,47 @@ docker exec
 docker network
 ````
 
+### 13) Lists docker volumes on the host machine
+```
+docker volume ls
+```
+
+### 14) Create a docker volume on the host machine
+```
+docker volume create <-volume_name->
+```
+
+### 15) Get more details about a specific volume
+```
+docker volume inspect <-volume_name->
+```
+
+### 16) Delete a volume
+```
+docker volume rm <-volume_name->
+```
+
+### 17) Using a Volume with a Container (Mount a volume when creating the container )
+```
+docker run -d --mount source=<-volume_name->, target=/app <-image_name->
+```
+
+*if you haven't created a docker image it , then you can write a image name, then it will pull it from docker hub
+
+```
+docker run -d --mount source=<-volume_name->, target=/app nginx:latest
+```
+
+*This mount will be in a specific directory in Host OS, and the mount will be in /app directory in the container (Because  target=/app )
+
+
+### 18) Get all details(Inspect) about a specific container including mount details
+```
+docker inspect <-container_name->
+```
+Destinations - This will depicts where the mount in container
+
+Source       - This will depicts where the mount in host OS
+
+
 
