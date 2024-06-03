@@ -137,13 +137,20 @@ docker run -d --mount source=<-volume_name->, target=/app <-image_name->
 docker run -d --mount source=<-volume_name->, target=/app nginx:latest
 ```
 
-*This mount will be in a specific directory in Host OS, and the mount will be in /app directory in the container (Because  target=/app )
+*This mount will be in a specific directory in Host OS. We dont need it creat it.
+Docker will create a logical volume (Tha's mean docker will create a directory) 
+by itself
+
+*And the mount will be in /app directory in the container (Because  target=/app )
+
 
 
 ### 18) Get all details(Inspect) about a specific container including mount details
+
 ```
 docker inspect <-container_name->
 ```
+
 Destinations - This will depicts where the mount in container
 
 Source       - This will depicts where the mount in host OS
