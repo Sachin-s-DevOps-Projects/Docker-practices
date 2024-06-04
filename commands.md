@@ -87,9 +87,6 @@ docker login
 docker pull
 ````
 
-
-
-
 ### 11) Uploads an image to the configured registry  
 
 Before this you have to login to docker
@@ -97,40 +94,53 @@ Before this you have to login to docker
 docker push
 ````
 
-### 12)Run a command in a running container
+### 12) Log into a container and access a shell to perform manual operations
 
 ````
-docker exec
+docker exec -it <container_name> /bin/bash
 ````
 
-### 12)Manage Docker networks such as creating and removing networks, and connecting containers to networks
+### 13) Execute one-off administrative commands or scripts inside a running container without logging into it
+
+````
+docker exec <container_name> ls /var/log
+````
+
+````
+docker exec <container_name> cat /etc/nginx/nginx.conf
+````
+### 14) We can use monitoring and debugging tools to gather performance metrics or debug running applications
+````
+docker exec -it <container_name> top
+````
+### 15)Manage Docker networks such as creating and removing networks, and connecting containers to networks
 
 ````
 docker network
 ````
 # Docker Volumes
 
-### 13) Lists docker volumes on the host machine
+### 16) Lists docker volumes on the host machine
 ```
 docker volume ls
 ```
 
-### 14) Create a docker volume on the host machine
+### 17) Create a docker volume on the host machine
 ```
 docker volume create <-volume_name->
 ```
 
-### 15) Get more details about a specific volume
+### 18) Get more details about a specific volume
 ```
 docker volume inspect <-volume_name->
 ```
 
-### 16) Delete a volume
+### 19) Delete a volume
 ```
 docker volume rm <-volume_name->
 ```
 
-### 17) Using a Volume with a Container (Mount a volume when creating the container )
+### 20) Using a Volume with a Container (Mount a volume when creating the container )
 ```
 docker run -d --name my-nginx-app --mount source=<-volume_name->,target=/app <-image_name->
              or
@@ -157,7 +167,7 @@ in the Host operating system(OS) by itself.
 
 
 
-### 18) Get all details(Inspect) about a specific container including mount details
+### 21) Get all details(Inspect) about a specific container including mount details
 
 ```
 docker inspect <-container_name->
@@ -170,7 +180,7 @@ Source       - This will depicts where the mount in host OS
 ex:  "Destination": "/app",
 
 
-### 19)Stops a mount 
+### 22)Stops a mount 
 
 >Before stopping a mount, first you must stop the container which has been mounted
 >after then container must be removed. Then you'll be able to stop the mount 
@@ -180,25 +190,25 @@ docker volume <-volume_name->
 
 # Docker Networking
 
-### 20) List out all the network on the host machine
+### 23) List out all the network on the host machine
 
 ````
 docker network ls
 ````
 
-### 21) Remove a docker network
+### 24) Remove a docker network
 
 ````
 docker network rm <network_name>
 ````
 
-### 22) To create a custome bridge network
+### 25) To create a custome bridge network
 
 ````
 docker network create <custom_bridge_network_name>
 ````
 
-### 20) Assign a custom network to a container
+### 26) Assign a custom network to a container
 
 Custom Network should be passed while container is creating
 
