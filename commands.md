@@ -99,6 +99,8 @@ docker push
 ````
 docker exec -it <container_name> /bin/bash
 ````
+>NOTE- After log into a container, you can use "ctrl + D" keys or "exit" command to exit from the container
+
 
 ### 13) Execute one-off administrative commands or scripts inside a running container without logging into it
 
@@ -217,4 +219,21 @@ docker run -d --name <container_name> --network=<custome_breidge> <docker_image>
 ````
 >NOTE: This custom network is completely isolated from other default bride networks. So this container won't be able to comminicate with other containers which has default bridge network
 
-
+### 27) How to install 'ping' inside a specific docker container
+#### You can use the ping command to check if a container is reachable from another container. 
+Access the Container:
+````
+docker exec -it frontend /bin/bash
+````
+Update the Package List (optional but recommended):
+````
+apt-get update
+````
+Install ping (iputils-ping):
+````
+apt-get install -y iputils-ping
+````
+Execute Command to test Network Connectivity:
+````
+ping 172.17.0.3
+````
