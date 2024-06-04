@@ -33,6 +33,9 @@ docker run -it --name <container  name> <_docker image>
 There are many arguments which you can pass to this command for example,
 
 `docker run -d` -> Run container in background and print container ID
+````
+docker run -d --name <container  name> <_docker image>
+````
 `docker run -p` -> Port mapping
 
 use `docker run --help` to look into more arguments.
@@ -105,6 +108,7 @@ docker exec
 ````
 docker network
 ````
+# Docker Volumes
 
 ### 13) Lists docker volumes on the host machine
 ```
@@ -173,5 +177,34 @@ ex:  "Destination": "/app",
 ````
 docker volume <-volume_name->
 ````
+
+# Docker Networking
+
+### 20) List out all the network on the host machine
+
+````
+docker network ls
+````
+
+### 21) Remove a docker network
+
+````
+docker network rm <network_name>
+````
+
+### 22) To create a custome bridge network
+
+````
+docker network create <custom_bridge_network_name>
+````
+
+### 20) Assign a custom network to a container
+
+Custom Network should be passed while container is creating
+
+````
+docker run -d --name <container_name> --network=<custome_breidge> <docker_image>
+````
+>NOTE: This custom network is completely isolated from other default bride networks. So this container won't be able to comminicate with other containers which has default bridge network
 
 
