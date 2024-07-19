@@ -97,9 +97,6 @@ docker push
 ### 12) Log into a container and access a shell to perform manual operations
 
 ````
-docker exec -it <container_name> -- /bin/bash
-````
-````
 docker exec -it <container_name> /bin/bash
 ````
 >NOTE- After log into a container, you can use "ctrl + D" keys or "exit" command to exit from the container
